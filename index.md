@@ -20,7 +20,7 @@ Salmon Creek Systems is a public benefit consulting firm committed to supporting
  
 ## Projects
 ### Stewardship Atlases
-The Stewardship Atlases are scheduled subscription data  builds integrated to provide comprehensive situational awareness of environmental conditions. SA’s are structured data products built using cloud native geospatial assets, agency datasets, and locally tasked content. Stewardship Atlases have been developed for a series of user story archetypes and are then are localized through iterative knowledge co production with land managers. The local data produced through the Stewardship Atlases have the ability to contribute to regional knowledge, calibrate remotely sensed and imputed datasets, and adapt to emerging concerns.  
+The Stewardship Atlases ("SA") are scheduled subscription data  builds integrated to provide comprehensive situational awareness of environmental conditions. SA’s are structured data products built using cloud native geospatial assets, agency datasets, and locally tasked content. Stewardship Atlases have been developed for a series of user story archetypes and are then are localized through iterative knowledge co production with land managers. The local data produced through the Stewardship Atlases have the ability to contribute to regional knowledge, calibrate remotely sensed and imputed datasets, and adapt to emerging concerns.  
 
 ## User story archetypes 
 * Incident Resource Advisors
