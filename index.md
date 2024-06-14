@@ -1,9 +1,11 @@
 # Salmon Creek Systems
 
+![image](images/image9.png)
+
 ## You cannot manage what you cannot measure
 Salmon Creek Systems is a public benefit consulting firm committed to supporting communities achieving science based climate resilience and mitigation targets.  SCS supports community resilience by deploying an agile federation of mission critical environmental data strategies.  SCS is committed to balancing the rapidly growing capabilities of centralized geospatial data providers with locally evolving knowledge and practices to enhance critical environmental decision support functions. 
 
-![image](images/image1.png)
+![image](images/image6.png)
 
 ## Principles 
 
@@ -31,9 +33,16 @@ The Stewardship Atlases are scheduled subscription data  builds integrated to pr
 
 Contact: tim   “at”  caflc.dev
 
+![image](images/image1.png)
 ![image](images/image2.png)
-
 ![image](images/image3.png)
-
 ![image](images/image4.png)
+![image](images/image5.png)
+![image](images/image7.png)
+![image](images/image8.png)
+![image](images/image10.png)
+![image](images/image11.png)
+![image](images/image12.png)
+![image](images/image13.png)
+![image](images/image14.png)
 
