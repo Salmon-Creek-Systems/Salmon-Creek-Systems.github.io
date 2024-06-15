@@ -1,19 +1,62 @@
+# SCS
+#lightningcatcher
+#scs
 
-* Fused, onboard, out from
+
+# Subjects To Learn More About
+
+* Overture
+  * [Overture Maps Foundation – Linux Foundation Project](https://overturemaps.org/)
+  * A  curated map data set merging multiple data sources and cleaning them up?
+  * SCS wouldn’t be part of Overture, but emulate the idea?
+    * Why not be part of Overture?
+      * control over private data?
+      * feedback loop
 * OSM
+  * [OpenStreetMap Foundation](https://osmfoundation.org)
+  * Raw open data set(s)
 * mapillary (Facebook, GSM)
+  * [Images and Data for OpenStreetMap](https://www.mapillary.com/osm)
+  * Software tool to integrate image data and edit maps
+    * not a dataset?
 * Vibrant Planet
+  * https://www.vibrantplanet.net/landtender
+  * Product to integrate map data, management, decision support
+  * Seems very similar to some aims of SA - what’s different?
+    * Simple data product for use in different ways, not just management tool?
+    * Cost?
+    * simple feedback mechanism?
+    * Open?
 * H3
-* JEDI lidar
+  * [H3 | H3](https://h3geo.org)
+  * Geospatial Indexing system
+  * C library with bindings
+* GEDI lidar
+  * [H3 | H3](https://h3geo.org)
+  * Data source (forestry)
 * PDAL.io - point cloud data abstraction layer
+  * [Point Data Abstraction Library — pdal.io](https://pdal.io/)
+  * Library (C w/python) for point cloud data
+    * what would we use this for?
+    * Mapping lidar down to a map?
 * FUSED Ivan Brodsky
-* Lawn board
-* Parquet, geo-parquet
+  * [Isaac Brodsky on LinkedIn: DuckDB + Fused: Fly beyond the serverless horizon](https://www.linkedin.com/posts/isaacbrodsky_duckdb-fused-fly-beyond-the-serverless-activity-7183501655307350018-QQ1r/)
+  * [DuckDB + Fused: Fly beyond the serverless horizon](https://medium.com/@fused/duckdb-fused-fly-beyond-the-serverless-horizon-886d892834aa)
+  * Platform for working with live map data and providing views and interface, possibly hosted in the cloud
+  * 
+* Lawn board - ???
+* Parquet - how used for map data specifically?
 * Duck db 
-* Map libra
+* MapLibre - [site]([MapLibre](https://maplibre.org)
+  * Set of toolkits for displaying maps in web pages and apps
+  * Vector maps only?
 
 
 # Thoughts
+
+Map data vs…”topology” data
+OSM vs overture
+
 
 ## Potential Energy
 * data narratives as guides to accomplishing bureaucratic/technical tasks
@@ -23,7 +66,7 @@
 ## Potential Projects
 * My First FMP
 * Tools
-* Data transofmration
+* Data transfor
 
 
 
