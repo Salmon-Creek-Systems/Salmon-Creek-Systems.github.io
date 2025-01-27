@@ -18,13 +18,12 @@ Contact: tim   “at”  caflc.dev
 ## Data Informed Democratic Decision Support Systems 
 Facilitate broad inclusive access and informed engagement with the spatial data infrastructure that underpins climate resilience mobilization and decision support.  Facilitate knowledge coproduction across organizatiaonl boundaries
 # Strategy 
+* SNAIL data, Slow, Narrow, Accurate, Indepth, Local  
 * Amplify community knowledge coproduction
-* Focus on widely shared Spatial Data Infrastructure investments
-* Use reproducible methods
+* Facilitate knowledge flows across a network
 * Model leading data stewardship practices
-* Amplify successful methods across the community of practice
 ## Building data services that support decision across the environmental management lifecycle 
-* Environmental data microservices
+* Microservices    small data is beutiful
 * User centered design
 * Data with perspective
 # Projects 
@@ -33,7 +32,7 @@ Facilitate broad inclusive access and informed engagement with the spatial data 
   * Manage user generated content
   * Facilitate knowledge multidirectional knowledge exchange
   * Optimize local knowledge systems for findability and interoperabiliy 
- ### Stewardship Atlas,   knowledge systems for environmental management 
+ ### Stewardship Atlas,  multiscale knowledge systems for environmental management 
  * set goals
  * prioritize
  * plan
