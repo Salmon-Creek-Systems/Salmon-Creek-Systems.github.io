@@ -1,5 +1,5 @@
 # Salmon Creek Systems
-![image](images/.png)
+![image](images/lidar_Xsection.png)
 
 
 ## You cannot manage what you cannot measure
