@@ -6,13 +6,12 @@
 Salmon Creek Systems LLC is a public benefit consulting firm committed to supporting communities pursuing science based climate resilience and mitigation targets.  SCS supports community resilience through agile federation of environmental data systems.  SCS is committed to balancing the rapidly growing capabilities of centralized geospatial data providers with local knowledge and practices.  
 
 Contact: tim   “at”  caflc.dev
-![image](https://github.com/user-attachments/assets/da163d88-6ce0-4899-9de9-44a5cd3962e0)
 
 ## Data Informed Democratic Decision Support Systems 
 Facilitate broad inclusive access and informed engagement with the environmental data infrastructure 
 Geospatial data underpins climate resilience efforts 
 # Strategy 
-* SNAIL data, Slow, Narrow, Accurate, Indepth, Local  
+* SNAIL data methods, Slow, Narrow, Accurate, Indepth, Local  
 * Amplify community knowledge coproduction
 * Facilitate knowledge flows across a network
 * Model leading data stewardship practices
