@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page.title | default: site.title }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body class="{% if page.url == '/' %}is-home{% else %}is-page{% endif %}">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="wordmark" href="{{ '/' | relative_url }}">
+        <span class="wordmark__mark" aria-hidden="true"></span>
+        <span>Salmon Creek Systems<small>Geospatial climate resilience</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="{{ '/Vision Statement' | relative_url }}">Vision</a>
+        <a href="{{ '/Architectural Overview' | relative_url }}">Architecture</a>
+        <a href="{{ '/Code Documentation' | relative_url }}">Docs</a>
+        <a class="is-cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    {% unless page.url == '/' %}
+    <header class="page-head">
+      <a class="page-head__back" href="{{ '/' | relative_url }}">&larr; Salmon Creek Systems</a>
+      {% if page.eyebrow %}<p class="page-head__eyebrow">{{ page.eyebrow }}</p>{% endif %}
+      <h1 class="page-head__title">{{ page.title }}</h1>
+      {% if page.summary %}<p class="page-head__summary">{{ page.summary }}</p>{% endif %}
+    </header>
+    {% endunless %}
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        Salmon Creek Systems LLC
+        <span>Public benefit consulting · Northern California</span>
+      </div>
+      <div class="site-footer__meta" id="contact">
+        Contact &nbsp;<a href="mailto:tim@caflc.dev">tim@caflc.dev</a><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:gateless@gmail.com">gateless@gmail.com</a><br>
+        &copy; {{ site.time | date: '%Y' }} Salmon Creek Systems LLC
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

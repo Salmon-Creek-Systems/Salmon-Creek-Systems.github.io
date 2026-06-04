@@ -1,0 +1,19 @@
+title: Salmon Creek Systems
+description: >-
+  A public benefit consulting firm supporting science-based climate resilience
+  through agile federation of environmental data systems.
+url: "https://salmoncreeksystems.com"
+
+# Use the shared layout for any page that doesn't set one explicitly.
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Build settings
+markdown: kramdown
+exclude:
+  - README.md
+  - PRD-StewardshipAtlas.md
+  - INSTALL.md

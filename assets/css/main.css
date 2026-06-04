@@ -1,0 +1,467 @@
+/* ============================================================
+   Salmon Creek Systems — shared site theme
+   Styles raw markdown output. Content stays in plain .md files.
+   Aesthetic: field-guide / interpretive trail signage meets a
+   modern geospatial consultancy. Warm paper, pine green, lots
+   of whitespace.
+   ============================================================ */
+
+/* ---- Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* ---- Design tokens ---- */
+:root {
+  /* warm paper neutrals */
+  --paper:      #F6F2E8;
+  --paper-card: #FBF8F0;
+  --paper-band: #EEE8D8;
+
+  /* deep-green inks */
+  --ink:        #1E2720;
+  --ink-soft:   #4A554A;
+  --ink-faint:  #76806F;
+
+  /* greens */
+  --pine:       #2E5A41;
+  --pine-deep:  #213F30;
+  --sage:       #8C9A7E;
+
+  /* warm accent — used sparingly */
+  --clay:       #B05E37;
+
+  /* structural */
+  --line:       rgba(30, 39, 32, 0.13);
+  --line-soft:  rgba(30, 39, 32, 0.07);
+
+  --measure:    40rem;          /* prose column ~720px */
+  --wide:       58rem;          /* media / wide blocks  */
+  --gutter:     clamp(1.25rem, 5vw, 3rem);
+
+  --font-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-sans:  "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:  "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: clamp(1.02rem, 0.96rem + 0.3vw, 1.12rem);
+  line-height: 1.72;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+
+/* subtle topographic-contour wash behind the page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 80% at 85% -10%, rgba(46,90,65,0.05), transparent 60%),
+    radial-gradient(90% 60% at 0% 105%, rgba(176,94,55,0.04), transparent 55%);
+}
+
+/* ============================================================
+   Header / wordmark / nav
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-header__inner {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 0.95rem var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.16rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.wordmark__mark {           /* tiny topographic mark: 3 concentric rings */
+  position: relative;
+  width: 22px; height: 22px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  border: 1.5px solid var(--pine);
+}
+.wordmark__mark::before,
+.wordmark__mark::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--pine);
+  opacity: 0.55;
+}
+.wordmark__mark::before { inset: 3.5px; }
+.wordmark__mark::after  { inset: 7.5px; opacity: 0.85; background: var(--pine); }
+.wordmark small {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 2px;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.9rem, 2.5vw, 1.9rem);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink-soft);
+  padding: 0.2rem 0;
+  border-bottom: 1.5px solid transparent;
+  transition: color .15s, border-color .15s;
+  white-space: nowrap;
+}
+.site-nav a:hover { color: var(--pine); border-bottom-color: var(--sage); }
+.site-nav a.is-cta { color: var(--clay); }
+.site-nav a.is-cta:hover { border-bottom-color: var(--clay); }
+
+/* ============================================================
+   Layout shell — single editorial column, wide media breakout
+   ============================================================ */
+.content {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: clamp(2.5rem, 7vw, 5rem) var(--gutter) 5rem;
+}
+
+/* media (and wide blocks) break out past the prose measure,
+   but never wider than the viewport minus its gutters */
+.content > figure,
+.content > p > img,
+.content > img {
+  width: min(var(--wide), calc(100vw - 2 * var(--gutter)));
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ============================================================
+   Markdown typography
+   ============================================================ */
+.content > h1,
+.content > h2,
+.content > h3,
+.content > p,
+.content > ul,
+.content > ol,
+.content > blockquote,
+.content > pre,
+.content > hr { margin-inline: auto; }
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+/* section headings (markdown #) — each opens a new "panel" */
+.content > h1 {
+  font-size: clamp(1.9rem, 1.4rem + 2.2vw, 2.85rem);
+  margin: 4.25rem 0 1.4rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--line);
+  position: relative;
+}
+.content > h1::before {            /* trail-marker diamond */
+  content: "";
+  position: absolute;
+  top: 2.25rem; left: 0;
+  width: 9px; height: 9px;
+  background: var(--pine);
+  transform: translateY(0.55em) rotate(45deg);
+}
+.content > h1 { padding-left: 1.6rem; }
+
+/* the very first heading = hero (home page only) */
+.is-home .content > h1:first-of-type {
+  border-top: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.5rem, 1.6rem + 4.4vw, 4.1rem);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  max-width: 16ch;
+}
+.is-home .content > h1:first-of-type::before { content: none; }
+
+/* subsection headings (markdown ##) */
+.content h2 {
+  font-size: clamp(1.32rem, 1.1rem + 1vw, 1.7rem);
+  margin: 2.6rem 0 0.9rem;
+  color: var(--pine-deep);
+  font-style: italic;
+  font-weight: 500;
+}
+.content h3 {
+  font-size: 1.16rem;
+  margin: 2rem 0 0.6rem;
+}
+
+/* a "lead" paragraph — first paragraph after the hero h1 (home only) */
+.is-home .content > h1:first-of-type + p {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.05rem + 0.7vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin-bottom: 2rem;
+}
+
+p { margin: 0 0 1.25rem; }
+.content p { max-width: var(--measure); }
+
+/* links in prose */
+.content a {
+  color: var(--pine);
+  text-decoration: none;
+  background-image: linear-gradient(var(--sage), var(--sage));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1.5px;
+  padding-bottom: 1px;
+  transition: background-size .18s, color .18s;
+}
+.content a:hover { color: var(--clay); background-image: linear-gradient(var(--clay), var(--clay)); }
+
+/* prose links don't apply inside the masthead */
+.page-head a {
+  background: none;
+  padding-bottom: 0;
+}
+strong { font-weight: 600; color: var(--ink); }
+em { font-style: italic; }
+
+/* ---- Lists: field-guide markers ---- */
+.content ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.3rem 0 1.6rem;
+  max-width: var(--measure);
+}
+.content ul li {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1.6rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+.content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 1.15em;
+  width: 7px; height: 7px;
+  background: var(--clay);
+  transform: rotate(45deg);
+}
+.content ol { padding-left: 1.3rem; max-width: var(--measure); }
+.content li { margin: 0.2rem 0; }
+
+/* ---- Figures / images ---- */
+.content figure { margin-block: 2.75rem; }
+.content img,
+.content figure img {
+  border: 1px solid var(--line);
+  background: var(--paper-card);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 18px 40px -28px rgba(30,39,32,0.5);
+}
+.content figcaption {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-faint);
+  margin-top: 0.7rem;
+  padding-left: 0.1rem;
+}
+
+/* ---- Blockquote ---- */
+.content blockquote {
+  margin: 2rem 0;
+  padding: 0.2rem 0 0.2rem 1.4rem;
+  border-left: 3px solid var(--sage);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--ink-soft);
+}
+
+/* ---- Code ---- */
+.content code {
+  font-family: var(--font-mono);
+  font-size: 0.86em;
+  background: var(--paper-band);
+  padding: 0.12em 0.4em;
+  border-radius: 3px;
+}
+.content pre {
+  background: var(--pine-deep);
+  color: #E8EEE3;
+  padding: 1.1rem 1.3rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  max-width: var(--wide);
+}
+.content pre code { background: none; padding: 0; color: inherit; }
+
+/* ---- HR ---- */
+.content hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 3rem 0;
+}
+
+/* ============================================================
+   Inner-page masthead (any page that isn't the home page)
+   ============================================================ */
+.page-head {
+  max-width: var(--measure);
+  margin: 0 auto 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+.page-head__back {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  margin-bottom: 1.75rem;
+  transition: color .15s;
+}
+.page-head__back:hover { color: var(--pine); }
+.page-head__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin: 0 0 0.6rem;
+}
+.page-head__title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 1.5rem + 2.8vw, 3.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+  margin: 0;
+  max-width: 20ch;
+}
+.page-head__summary {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 1.02rem + 0.6vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  margin: 1.1rem 0 0;
+  max-width: 46ch;
+}
+
+/* on inner pages, the first body heading is a section head (not a hero),
+   and shouldn't carry a top rule right under the masthead */
+.is-page .content > h1:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 2.5rem;
+}
+.is-page .content > h1:first-of-type::before { top: 0; }
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--paper-band);
+}
+.site-footer__inner {
+  max-width: var(--wide);
+  margin: 0 auto;
+  padding: 2.6rem var(--gutter) 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.site-footer__brand {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--ink);
+  max-width: 26ch;
+}
+.site-footer__brand span {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.5rem;
+}
+.site-footer__meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  line-height: 1.9;
+  color: var(--ink-soft);
+}
+.site-footer__meta a { color: var(--pine); text-decoration: none; }
+.site-footer__meta a:hover { color: var(--clay); }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 640px) {
+  .site-header__inner { flex-direction: column; align-items: flex-start; gap: 0.7rem; }
+  .site-nav { flex-wrap: wrap; gap: 0.5rem 1.1rem; }
+  .content h1 { padding-left: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .content > h1,
+  .content > h2,
+  .content > h3,
+  .content > p,
+  .content > ul,
+  .content > ol,
+  .content > blockquote {
+    animation: rise .6s cubic-bezier(.2,.7,.3,1) both;
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
+}
