@@ -4,6 +4,12 @@ description: >-
   through agile federation of environmental data systems.
 url: "https://salmoncreeksystems.com"
 
+# Tours: overview walkthroughs of specific atlases, one markdown file each in _tours/.
+collections:
+  tours:
+    output: true
+    permalink: /tours/:name/
+
 # Use the shared layout for any page that doesn't set one explicitly.
 defaults:
   - scope:
