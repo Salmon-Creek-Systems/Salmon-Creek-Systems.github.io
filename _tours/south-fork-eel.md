@@ -2,13 +2,9 @@
 title: South Fork Eel field trip
 description: A guided tour of the South Fork Eel atlas, with preset views of the places we visited on the field trip.
 ---
-
-Some notes on the Field Trip atlas we’ve set up for deeper dives and ongoing conversations. First, you can contribute by 
-simply emailing any geotagged photos from the field trip to:
-
-south_fork_eel@fireatlas.org
-
-and it will be added to the atlas at the geotagged location with the subject line from your email as the label on the map. Just attach one photo per email to keep things simple.
+This field trip was organized as part of the [Wildfire Resilience Task Force Regional Meeting Oct. 1 2026](https://wildfiretaskforce.org/october-1-2026-north-coast-meeting-recap/).
+We visited a number of active and successful sites in Northern Mendocino,CA - engaging with beneficial fire, wildfire resilience, restoration work, and community development.
+If you were on this trip, you can contribute to the conversation by emailing geotagged photos (ask your organizer) and engaging with the spatially anchored discussion. If you were not, it's a way to learn about some great success stories in the space, and see a use of the Fire Atlas a bit different from its usual role in fire planning and response.
 
 For general context, here’s a high level 3D view looking over Laytonville. Hargus & Tan Oak Park are at the top right, and we’re looking across Cahto Creek and Bransomb Road toward Angelo Preserve:
 [3D Terrain - South_Fork_Eel](https://fireatlas.org/south_fork_eel/staging/outlets/3dview/?s=eyJhIjozOS42Njg2MTQsIm8iOi0xMjMuNTUwNzAxLCJ6IjoxMS45NCwidCI6NjUsInIiOi03MywiZSI6MS41LCJsIjpbInJvYWRzX3ByaW1hcnkiLCJyb2Fkc19zZWNvbmRhcnkiLCJyb2Fkc190ZXJ0aWFyeSIsImNyZWVrcyIsInBob3RvcyJdfQ==)
