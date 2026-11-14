@@ -25,3 +25,7 @@ Here's a current THP planned for the deep NW fork watershed:
 
 Here is a rough 3D journey from Miranda and the 101 up Salmon Creek to the THP:
 [3D trip up Salmon Creek](https://fireatlas.org/scvfd/staging/outlets/3dview/?s=eyJhIjo0MC4yMzU2MTksIm8iOi0xMjMuOTczNjM4LCJ6IjoxNC45NCwidCI6ODAsInIiOi0xNTYsImUiOjEuNSwibCI6WyJyb2FkcyIsImNyZWVrcyIsInRocF9ib3VuZGFyaWVzIiwibWlyYW5kYV90b19rZW5uZWR5Il0sInAiOiJtaXJhbmRhX3RvX2tlbm5lZHkiLCJoIjo0MDAsImMiOjgwLCJkIjoyMX0=)
+
+We can see two "sub-atlases" here, where detailed parcel-level data is available and can be shared with the SCVFD atlas encompassing them:
+
+[Sub-Atlases of SCVFD](https://fireatlas.org/scvfd/staging/outlets/webmap/?s=eyJhIjo0MC4yMDg4OTQxMDc3MzYxMTQsIm8iOi0xMjMuOTI4NDcwNjIwMjg2MzYsInoiOjEyLjY0OTgxMzc1OTcwMzI4LCJiIjoiYmFzZW1hcCIsImwiOlsiYmFzZW1hcCIsInBvbmRzIiwiY29udG91cnMiLCJmZWRlcmF0ZWQiLCJyb2FkcyIsImh5ZHJhbnRzIiwid2F0ZXJ0YW5rcyJdfQ==)
