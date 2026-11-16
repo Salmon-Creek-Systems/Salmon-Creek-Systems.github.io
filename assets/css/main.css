@@ -445,6 +445,83 @@ em { font-style: italic; }
 .site-footer__meta a:hover { color: var(--clay); }
 
 /* ============================================================
+   Tours — each map link becomes a small live map beside its text
+   (assets/js/tour-maps.js). The page widens so the text keeps its
+   measure on the left and the maps take the right third.
+   ============================================================ */
+.is-tour .content { max-width: calc(var(--wide) + 2 * var(--gutter)); }
+.is-tour .page-head { max-width: none; }
+.is-tour .content > h1,
+.is-tour .content > h2,
+.is-tour .content > h3,
+.is-tour .content > p,
+.is-tour .content > ul,
+.is-tour .content > ol,
+.is-tour .content > blockquote { margin-inline: 0; }
+
+.tour-stop {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 0 2rem;
+  align-items: start;
+  margin-block: 1.75rem;
+}
+.tour-stop__text > p:first-child { margin-top: 0; }
+.tour-stop > .tour-map { grid-column: 2; }
+.content .tour-map { margin: 0 0 1rem; }
+
+.tour-map__frame {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--line);
+  background: var(--paper-band);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 18px 40px -28px rgba(30,39,32,0.5);
+  overflow: hidden;
+}
+.tour-map__frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.tour-map__load {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  background: none;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.tour-map__load:hover { color: var(--pine); }
+.tour-map__frame.is-live .tour-map__load { display: none; }
+
+.content .tour-map figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.2rem 1rem;
+}
+.tour-map__label { color: var(--ink-soft); }
+
+@media (max-width: 760px) {
+  .tour-stop { grid-template-columns: minmax(0, 1fr); }
+  .tour-stop > .tour-map { grid-column: 1; }
+  .tour-map__frame { aspect-ratio: 4 / 3; }
+}
+
+/* A live map prints blank, so on paper a tour is its text and links. */
+@media print {
+  .tour-stop { display: block; }
+  .tour-map__frame { display: none; }
+}
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 640px) {
